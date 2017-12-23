@@ -135,7 +135,7 @@ describe('RemoveLast', () => {
   })
 })
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
   test('adds to the end of the list', () => {
     const l = new List()
     l.insertFirst('a')
@@ -147,7 +147,7 @@ describe.skip('InsertLast', () => {
   })
 })
 
-describe.skip('GetAt', () => {
+describe('GetAt', () => {
   test('returns the node at given index', () => {
     const l = new List()
     expect(l.getAt(10)).toEqual(null)
@@ -164,7 +164,7 @@ describe.skip('GetAt', () => {
   })
 })
 
-describe.skip('RemoveAt', () => {
+describe('RemoveAt', () => {
   test('removeAt doesnt crash on an empty list', () => {
     const l = new List()
     expect(() => {
@@ -177,7 +177,6 @@ describe.skip('RemoveAt', () => {
   test('removeAt doesnt crash on an index out of bounds', () => {
     const l = new List()
     expect(() => {
-      const l = new List()
       l.insertFirst('a')
       l.removeAt(1)
     }).not.toThrow()

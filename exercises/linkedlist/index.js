@@ -70,6 +70,47 @@ class LinkedList {
 
     previous.next = null
   }
+
+  insertLast (data) {
+    const last = this.getLast()
+    const node = new Node(data)
+
+    if (last) {
+      last.next = node
+    } else {
+      this.head = node
+    }
+  }
+
+  getAt (index) {
+    let counter = 0
+    let node = this.head
+
+    while (node) {
+      if (counter === index) {
+        return node
+      }
+
+      counter++
+      node = node.next
+    }
+
+    return null
+  }
+
+  removeAt (index) {
+    if (index === 0) {
+      this.removeFirst()
+      return
+    }
+
+    const previous = this.getAt(index - 1)
+    if (!previous || !previous.next) {
+      return
+    }
+
+    previous.next = previous.next.next
+  }
 }
 
 module.exports = { Node, LinkedList }
